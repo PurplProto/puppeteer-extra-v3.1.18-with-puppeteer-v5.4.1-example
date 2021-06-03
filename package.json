@@ -1,0 +1,22 @@
+{
+  "name": "puppeteer-extra-v3.1.18-with-puppeteer-v5.4.1-example",
+  "version": "1.0.0",
+  "description": "Just an example of how I cast the types between the Pupeteer and Puppeteer-Extra packages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "5.4.1",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-adblocker": "^2.11.11",
+    "puppeteer-extra-plugin-stealth": "^2.7.8"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "^5.4.3",
+    "typescript": "^4.3.2"
+  }
+}
