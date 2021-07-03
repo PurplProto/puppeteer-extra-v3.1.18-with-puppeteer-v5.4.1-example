@@ -40,16 +40,18 @@ async function processUrl(browser: puppeteerTypes.Browser, url: URL) {
     process.exit(1);
   }
 
-  const content = await page.content();
+  await page.waitForSelector('title');
+  let element = await page.$('title');
+  let content = await page.evaluate(el => el.textContent, element);
   await handlePageClose(page);
-  // Do stuff with content
+  console.log(`Here's the page content for ${url.href}:\n`, content);
   process.exit(0);
 }
 
 puppeteer.use(AdblockerPlugin()).use(StealthPlugin());
-puppeteer.launch({ headless: false })
+puppeteer.launch({ headless: true })
   .then(browser => {
-    processUrl(browser, new URL('https://google.com'));
+    processUrl(browser, new URL('https://www.codepen.io'));
   })
   .catch(e => {
     console.error('something got borked!\n\n', e);
